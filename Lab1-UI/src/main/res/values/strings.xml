@@ -1,0 +1,52 @@
+<resources>
+    <string name="app_name">Informacíon Personal</string>
+    <string name="nombres">Nombres</string>
+    <string name="apellido">Apellidos</string>
+    <string name="masculino">Masculino</string>
+    <string name="femenino">Femenino</string>
+    <string name="fecha_nacimiento">Fecha de Nacimiento</string>
+    <string name="grado_escolar">Grado de Escolaridad</string>
+
+    /*Alejandro*/
+    <string name="cambiar">Cambiar</string>
+    <string name="siguiente">Siguiente</string>
+    <string-array name="escolaridad_array">
+        <item>Primaria</item>
+        <item>Secundaria</item>
+        <item>Universitaria</item>
+        <item>Otro</item>
+    </string-array>
+
+    /*yoana*/
+    <string name="app_name2">Informacíon del Contacto</string>
+    <string name="telefono">Teléfono</string>
+    <string name="direccion">Dirección</string>
+    <string name="email">E-mail</string>
+    <string name="pais">País</string>
+    <string name="cuidad">Ciudad</string>
+    <string name="sexo">Sexo</string>
+
+    <string-array name="nom_paises">
+        <item>Argentina</item>
+        <item>Bolivia</item>
+        <item>Brasil</item>
+        <item>Chile</item>
+        <item>Colombia</item>
+        <item> Costa Rica</item>
+        <item>Cuba</item>
+        <item>Ecuador</item>
+        <item>El sañvador</item>
+        <item>Guatemala</item>
+        <item>Haití</item>
+        <item>Honduras</item>
+        <item>México</item>
+        <item>Nicaragua</item>
+        <item>Panamá</item>
+        <item>Paraguay</item>
+        <item>Perú</item>
+        <item>República Dominicana</item>
+        <item>uruguay</item>
+        <item>venezuela</item>
+    </string-array>
+
+</resources>
