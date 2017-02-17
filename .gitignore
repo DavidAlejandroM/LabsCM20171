@@ -219,5 +219,5 @@ pip-log.txt
 ## Android Studio
 #################
 
-.gradle
-.idea
+.gradle/
+.idea/
