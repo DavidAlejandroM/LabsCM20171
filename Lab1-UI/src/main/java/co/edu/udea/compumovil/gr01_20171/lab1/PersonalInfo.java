@@ -2,6 +2,7 @@ package co.edu.udea.compumovil.gr01_20171.lab1;
 
 import android.app.DatePickerDialog;
 import android.app.DialogFragment;
+import android.content.Intent;
 import android.icu.util.Calendar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -14,14 +15,20 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+import co.edu.udea.compumovil.gr01_20171.lab1.ContactInfo;
 
 public class PersonalInfo extends AppCompatActivity {
+
+    EditText et_nombres;
+    EditText et_apellido;
+
+    Contacto c;
 
     EditText etDate;
     Spinner spEstudio;
 
     Button btn_cambiar;
-    Button btm_siguiente;
+    Button btn_siguiente;
 
     private String[] nivelesEstudio;
 
@@ -30,10 +37,12 @@ public class PersonalInfo extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_personal_info);
 
+        c = new Contacto();
+
         etDate = (EditText) findViewById(R.id.et_fecha_nacimiento);
 
         btn_cambiar = (Button) findViewById(R.id.btn_cambiar);
-        btm_siguiente = (Button) findViewById(R.id.btn_siguiente);
+
 
         /**
          * funcionalidad al boton de cambiar para abrir el fragment
@@ -46,8 +55,29 @@ public class PersonalInfo extends AppCompatActivity {
             }
         });
 
+        incializandoComponentes();
+
         crearSpinner();
 
+        botonSiguiente();
+
+    }
+
+    private void incializandoComponentes() {
+
+    }
+
+    private void botonSiguiente() {
+        btn_siguiente = (Button) findViewById(R.id.btn_siguiente);
+
+        btn_siguiente.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(getApplicationContext(), ContactInfo.class);
+               // intent.putExtra("contacot" , c);
+            }
+        });
     }
 
     /**
