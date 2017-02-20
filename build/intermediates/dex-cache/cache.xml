@@ -79,7 +79,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="8fef545534e220f6690e6e8e3ab2118ea216f6ce">
+        sha1="94f20ba18d24807f73bf1a29e48b8a89773b315d">
         <dex dex="D:\Github\LabsCM20171\Lab1-UI\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_6dd0bed02f7ffd5bf2ec6cd8cbdbd641a0fa1797\classes.dex" />
     </item>
     <item
@@ -97,7 +97,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="135e50228b85e445984438823a73e35b1a8c551a">
+        sha1="468792d0cc2340697c8c2d898bfc6e5be0601c72">
         <dex dex="D:\Github\LabsCM20171\Lab1-UI\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_8e06439ff4be504159eb0f033aa67b9783d5169c\classes.dex" />
     </item>
     <item

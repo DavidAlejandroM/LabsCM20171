@@ -79,7 +79,7 @@
         <AutoCompleteTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/autoCompleteTextView6"
+            android:id="@+id/ciudades"
             android:hint="@string/cuidad" />
     </LinearLayout>
 
@@ -97,11 +97,21 @@
         android:layout_height="0dp"
         android:layout_weight="0.50">
 
-        <Button
-            android:text="Button"
+        <LinearLayout
+            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/button4" />
+            android:layout_height="0dp"
+            android:layout_weight="0.50">
+
+
+
+
+
+        </LinearLayout>
+
+
+
+
     </LinearLayout>
 
 </LinearLayout>

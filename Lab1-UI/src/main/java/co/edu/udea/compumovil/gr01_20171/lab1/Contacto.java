@@ -1,10 +1,12 @@
 package co.edu.udea.compumovil.gr01_20171.lab1;
 
+import java.io.Serializable;
+
 /**
  * Created by Alejandro on 18/02/2017.
  */
 
-public class Contacto {
+public class Contacto implements Serializable{
     private String nombres;
     private String apellidos;
     private String sexo;

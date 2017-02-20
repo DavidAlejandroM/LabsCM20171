@@ -64,6 +64,7 @@ public class PersonalInfo extends AppCompatActivity {
     }
 
     private void incializandoComponentes() {
+        et_nombres = (EditText) findViewById(R.id.et_nombres);
 
     }
 
@@ -74,8 +75,17 @@ public class PersonalInfo extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(getApplicationContext(), ContactInfo.class);
-               // intent.putExtra("contacot" , c);
+                String nombres = et_nombres.getText().toString();
+
+                if (nombres.isEmpty() == false)
+                {
+                    c.setNombres(nombres);
+                    Intent intent = new Intent(getApplicationContext(), ContactInfo.class);
+                    intent.putExtra("contacto" , c);
+                    startActivity(intent);
+                }
+
+
             }
         });
     }

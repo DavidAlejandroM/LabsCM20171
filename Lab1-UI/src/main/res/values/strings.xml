@@ -27,26 +27,43 @@
     <string name="sexo">Sexo</string>
 
     <string-array name="nom_paises">
-        <item>Argentina</item>
-        <item>Bolivia</item>
-        <item>Brasil</item>
-        <item>Chile</item>
-        <item>Colombia</item>
-        <item> Costa Rica</item>
-        <item>Cuba</item>
-        <item>Ecuador</item>
-        <item>El sañvador</item>
-        <item>Guatemala</item>
-        <item>Haití</item>
-        <item>Honduras</item>
-        <item>México</item>
-        <item>Nicaragua</item>
-        <item>Panamá</item>
-        <item>Paraguay</item>
-        <item>Perú</item>
-        <item>República Dominicana</item>
-        <item>uruguay</item>
-        <item>venezuela</item>
+    <item>Argentina</item>
+    <item>Bolivia</item>
+    <item>Brasil</item>
+    <item>Chile</item>
+    <item>Colombia</item>
+    <item> Costa Rica</item>
+    <item>Cuba</item>
+    <item>Ecuador</item>
+    <item>El sañvador</item>
+    <item>Guatemala</item>
+    <item>Haití</item>
+    <item>Honduras</item>
+    <item>México</item>
+    <item>Nicaragua</item>
+    <item>Panamá</item>
+    <item>Paraguay</item>
+    <item>Perú</item>
+    <item>República Dominicana</item>
+    <item>uruguay</item>
+    <item>venezuela</item>
+</string-array>
+
+    <string-array name="nom_ciudades">
+        <item>Barranquilla</item>
+        <item>Bogotá</item>
+        <item>Cali</item>
+        <item>Cartagena</item>
+        <item>Cúcuta</item>
+        <item>Medellí Rica</item>
     </string-array>
+
+    <string name="title_activity_other_info">Información Complementaria</string>
+    <string name="pasa_tiempos">Pasa Tiempos</string>
+    <string name="leer">Leer</string>
+    <string name="ver_tv">Ver Tv</string>
+    <string name="Bailar">Bailar</string>
+    <string name="cantar">Cantar</string>
+    <string name="nadar">Nadar</string>
 
 </resources>
