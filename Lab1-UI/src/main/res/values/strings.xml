@@ -1,0 +1,73 @@
+<resources>
+    <string name="app_name">Lab1-UI</string>
+    <string name="title_personal_info">Personal Information</string>
+    <string name="nombres">Names</string>
+    <string name="apellido">Last Name</string>
+    <string name="masculino">Male</string>
+    <string name="femenino">Female</string>
+    <string name="fecha_nacimiento">Birthdate</string>
+    <string name="grado_escolar">School Level</string>
+    <string name="title_informe">Report</string>
+
+    /*Alejandro*/
+    <string name="titulo_contact_info">Contact Information</string>
+    <string name="cambiar">Change</string>
+    <string name="siguiente">Next</string>
+    <string-array name="escolaridad_array">
+        <item>Primary School</item>
+        <item>High School</item>
+        <item>University</item>
+        <item>Others</item>
+    </string-array>
+
+    /*yoana*/
+    <string name="app_name2">Informacíon del Contacto</string>
+    <string name="telefono">Phone</string>
+    <string name="direccion">Address</string>
+    <string name="email">E-mail</string>
+    <string name="pais">Country</string>
+    <string name="cuidad">City</string>
+    <string name="sexo">Gender</string>
+
+    <string-array name="nom_paises">
+        <item>Argentina</item>
+        <item>Bolivia</item>
+        <item>Brazil</item>
+        <item>Chile</item>
+        <item>Colombia</item>
+        <item>Costa Rica</item>
+        <item>Cuba</item>
+        <item>Ecuador</item>
+        <item>El Salvador</item>
+        <item>Guatemala</item>
+        <item>Haiti</item>
+        <item>Honduras</item>
+        <item>Mexico</item>
+        <item>Nicaragua</item>
+        <item>Panama</item>
+        <item>Paraguay</item>
+        <item>Peru</item>
+        <item>Dominican Republic</item>
+        <item>Uruguay</item>
+        <item>Venezuela</item>
+    </string-array>
+
+    <string-array name="nom_ciudades">
+        <item>Barranquilla</item>
+        <item>Bogota</item>
+        <item>Cali</item>
+        <item>Cartagena</item>
+        <item>Cucuta</item>
+        <item>Medellín</item>
+    </string-array>
+
+    <string name="title_activity_other_info">Other Information</string>
+    <string name="pasa_tiempos">Hobbies</string>
+    <string name="leer">Read</string>
+    <string name="ver_tv">Watch TV</string>
+    <string name="Bailar">Dance</string>
+    <string name="cantar">Sing</string>
+    <string name="nadar">Swim</string>
+    <string name="mostrar">Show</string>
+
+</resources>
