@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">LabsCM20171</string>
+    <string name="login">Inicio de Sesion</string>
+    <string name="nombre_usuario">Nombre de Usuario</string>
+    <string name="contraseña">Contraseña</string>
+    <string name="registrarse">Resgistrarse</string>
+    <string name="iniciar">Iniciar</string>
+</resources>
