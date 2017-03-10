@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Lab1-UI</string>
+    <string name="title_personal_info">Informacíon Personal</string>
+    <string name="nombres">Nombres</string>
+    <string name="apellido">Apellidos</string>
+    <string name="masculino">Masculino</string>
+    <string name="femenino">Femenino</string>
+    <string name="fecha_nacimiento">Fecha de Nacimiento</string>
+    <string name="grado_escolar">Grado de Escolaridad</string>
+    <string name="title_informe">Informe</string>
+
+    /*Alejandro*/
+    <string name="titulo_contact_info">Información de Contacto</string>
+    <string name="cambiar">Cambiar</string>
+    <string name="siguiente">Siguiente</string>
+    <string-array name="escolaridad_array">
+        <item>Primaria</item>
+        <item>Secundaria</item>
+        <item>Universitaria</item>
+        <item>Otro</item>
+    </string-array>
+
+    /*yoana*/
+    <string name="app_name2">Informacíon del Contacto</string>
+    <string name="telefono">Teléfono</string>
+    <string name="direccion">Dirección</string>
+    <string name="email">E-mail</string>
+    <string name="pais">País</string>
+    <string name="cuidad">Ciudad</string>
+    <string name="sexo">Sexo</string>
+
+    <string-array name="nom_paises">
+        <item>Argentina</item>
+        <item>Bolivia</item>
+        <item>Brasil</item>
+        <item>Chile</item>
+        <item>Colombia</item>
+        <item>Costa Rica</item>
+        <item>Cuba</item>
+        <item>Ecuador</item>
+        <item>El Salvador</item>
+        <item>Guatemala</item>
+        <item>Haití</item>
+        <item>Honduras</item>
+        <item>México</item>
+        <item>Nicaragua</item>
+        <item>Panamá</item>
+        <item>Paraguay</item>
+        <item>Perú</item>
+        <item>República Dominicana</item>
+        <item>Uruguay</item>
+        <item>Venezuela</item>
+    </string-array>
+
+    <string-array name="nom_ciudades">
+        <item>Barranquilla</item>
+        <item>Bogotá</item>
+        <item>Cali</item>
+        <item>Cartagena</item>
+        <item>Cúcuta</item>
+        <item>Medellín</item>
+    </string-array>
+
+    <string name="title_activity_other_info">Información Complementaria</string>
+    <string name="pasa_tiempos">Pasa Tiempos</string>
+    <string name="leer">Leer</string>
+    <string name="ver_tv">Ver Tv</string>
+    <string name="Bailar">Bailar</string>
+    <string name="cantar">Cantar</string>
+    <string name="nadar">Nadar</string>
+    <string name="mostrar">Mostrar</string>
+</resources>
