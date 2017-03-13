@@ -23,7 +23,7 @@
             android:label="@string/app_name" />
         <activity android:name=".Registrarse" />
         <activity
-            android:name=".navigation"
+            android:name=".Main"
             android:label="@string/title_activity_navigation"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>

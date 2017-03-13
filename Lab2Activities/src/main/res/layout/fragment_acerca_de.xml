@@ -1,13 +1,65 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="co.edu.udea.compumovil.gr01_20171.lab2.AcercaDe">
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_weight="9"></LinearLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_weight="1">
 
-</FrameLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/info"
+            android:id="@+id/datos"
+            android:textSize="20dp"
+            android:textStyle="italic"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/realizadopor"
+            android:id="@+id/realizado"
+            android:textStyle="bold|italic"
+            android:layout_below="@+id/datos"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/johana"
+            android:id="@+id/textView3"
+            android:elegantTextHeight="false"
+            android:textSize="20dp"
+            android:layout_below="@id/realizado"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/alejandro"
+            android:id="@+id/textView4"
+            android:textSize="20dp"
+            android:layout_below="@id/textView3"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/docente"
+            android:id="@+id/docente"
+            android:textStyle="bold|italic"
+            android:layout_below="@+id/textView4"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/sebastian"
+            android:id="@+id/profesor"
+            android:elegantTextHeight="false"
+            android:textSize="20dp"
+            android:layout_below="@id/docente"/>
+    </RelativeLayout>
+
+
+</LinearLayout>
