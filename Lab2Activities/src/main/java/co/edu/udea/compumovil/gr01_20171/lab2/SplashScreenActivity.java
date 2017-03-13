@@ -35,7 +35,7 @@ public class SplashScreenActivity extends Activity {
 
                 // inciamos la nueva actividad
                 Intent mainIntent = new Intent().setClass(
-                        SplashScreenActivity.this, LoginActivity.class);
+                        SplashScreenActivity.this, Login.class);
                 startActivity(mainIntent);
 
                 //finalizamos la actividad del splash screen
