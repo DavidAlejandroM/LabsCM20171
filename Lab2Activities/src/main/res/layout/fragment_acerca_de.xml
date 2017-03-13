@@ -26,6 +26,7 @@
             android:layout_height="wrap_content"
             android:text="@string/realizadopor"
             android:id="@+id/realizado"
+            android:textSize="23dp"
             android:textStyle="bold|italic"
             android:layout_below="@+id/datos"/>
         <TextView
@@ -49,6 +50,7 @@
             android:layout_height="wrap_content"
             android:text="@string/docente"
             android:id="@+id/docente"
+            android:textSize="23dp"
             android:textStyle="bold|italic"
             android:layout_below="@+id/textView4"/>
         <TextView
