@@ -9,7 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 public class AcercaDe extends Fragment {
-
+    public static final int ID = 7;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
