@@ -43,7 +43,7 @@ public class DbHelper extends SQLiteOpenHelper {
         String tablaEventos = "CREATE TABLE " + DbContract.DbEntry.TN_EVENTOS + " ("
                 + DbContract.DbEntry._ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
                 + DbContract.DbEntry.CN_EV_NOMBRE + " TEXT NOT NULL,"
-                + DbContract.DbEntry.CN_EV_FOTO + " TEXT NOT NULL,"
+                + DbContract.DbEntry.CN_EV_FOTO + " BLOB,"
                 + DbContract.DbEntry.CN_EV_RESPOSABLE + " TEXT NOT NULL,"
                 + DbContract.DbEntry.CN_EV_PUNTUACION + " INTEGER NOT NULL,"
                 + DbContract.DbEntry.CN_EV_FECHA + " INTEGER NOT NULL,"

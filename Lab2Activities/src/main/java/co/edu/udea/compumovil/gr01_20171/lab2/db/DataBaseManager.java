@@ -5,6 +5,9 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
+import java.util.ArrayList;
+
+import co.edu.udea.compumovil.gr01_20171.lab2.Modelo.Evento;
 import co.edu.udea.compumovil.gr01_20171.lab2.Modelo.Usuario;
 
 /**
@@ -35,7 +38,7 @@ public class DataBaseManager {
          return valores;
      }
 
-    public ContentValues generarContentValuesEvento(String nombre,String foto, String responsable,
+    public ContentValues generarContentValuesEvento(String nombre,byte[] foto, String responsable,
                                                     int puntuacion, String fecha, float latitud,
                                                     float longitud, String informacion)
     {
@@ -66,7 +69,7 @@ public class DataBaseManager {
         }
     }
 
-    public boolean insertarEvento(String nombre,String foto, String responsable,
+    public boolean insertarEvento(String nombre,byte[] foto, String responsable,
                                   int puntuacion, String fecha, float latitud,
                                   float longitud, String informacion)
     {
@@ -98,7 +101,7 @@ public class DataBaseManager {
     public Cursor selectTodosEventos()
     {
         return db.query(
-                DbContract.DbEntry.TN_USUARIOS,
+                DbContract.DbEntry.TN_EVENTOS,
                 null,
                 null,
                 null,
@@ -184,6 +187,53 @@ public class DataBaseManager {
         }
 
         return u;
+    }
+
+    /*private Usuario getUsuarioFromCursorUsuario(Cursor cursor)
+    {
+        Usuario u = null;
+
+        if(cursor.getCount() == 1)
+        {
+            cursor.moveToFirst();
+            u = new Usuario(
+                    cursor.getString(1),
+                    cursor.getString(2),
+                    cursor.getString(3),
+                    cursor.getInt(4),
+                    cursor.getString(5),
+                    cursor.getInt(6)
+            );
+        }
+        return u;
+    }*/
+
+    public ArrayList<Evento> obtenerTodosEventos()
+    {
+        ArrayList<Evento> arrayList = new ArrayList<>();
+        Evento evento = null;
+        Cursor cursor = selectTodosEventos();
+        cursor.moveToFirst();
+        int count = cursor.getCount();
+        int i = 0;
+        while (i<count)
+        {
+            evento = new Evento(
+                    cursor.getString(1),
+                    cursor.getBlob(2),
+                    cursor.getString(3),
+                    cursor.getInt(4),
+                    cursor.getString(5),
+                    cursor.getFloat(6),
+                    cursor.getFloat(7),
+                    cursor.getString(8)
+            );
+            arrayList.add(evento);
+            cursor.moveToNext();
+            i++;
+        }
+
+        return arrayList;
     }
 
 }
