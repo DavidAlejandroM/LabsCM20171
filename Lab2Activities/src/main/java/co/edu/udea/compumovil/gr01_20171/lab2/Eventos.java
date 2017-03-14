@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 import co.edu.udea.compumovil.gr01_20171.lab2.Modelo.Evento;
@@ -66,7 +67,16 @@ public class Eventos extends Fragment {
                         // do whatever
                         Evento e = eventos.get(position);
                         Intent intent = new Intent(getActivity().getBaseContext(),VisualizarEvento.class);
-                        intent.putExtra("evento",e);
+                        //intent.putExtra("eventooo",e);
+                        intent.putExtra("nombre",e.getNombre());
+                        intent.putExtra("informacion",e.getInformacion());
+                        intent.putExtra("responsable",e.getResponsable());
+                        intent.putExtra("fecha",e.getFecha());
+                        intent.putExtra("puntuacion",e.getPuntuacion());
+                        intent.putExtra("latitud",e.getLatitud());
+                        intent.putExtra("longitud",e.getLongitud());
+                        //intent.putExtra("foto",(byte[]) e.getFoto());
+                        /*intent.putExtra("foto",e.getFoto());*/
                         startActivity(intent);
 
                     }

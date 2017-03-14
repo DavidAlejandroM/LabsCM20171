@@ -236,4 +236,30 @@ public class DataBaseManager {
         return arrayList;
     }
 
+    public Evento getEventoFromNombreFecha(String nombre, String fecha)
+    {
+        Evento evento = null;
+        String query = "SELECT * FROM " + DbContract.DbEntry.TN_EVENTOS + " WHERE " +
+                DbContract.DbEntry.CN_EV_NOMBRE + " = '"+ nombre +"'"/*+ " AND "+
+                DbContract.DbEntry.CN_EV_FECHA + " = " + fecha*/;
+        Cursor cursor = db.rawQuery(query,null);
+
+        if(cursor.getCount() == 1)
+        {
+            cursor.moveToFirst();
+            evento = new Evento(
+                    cursor.getString(1),
+                    cursor.getBlob(2),
+                    cursor.getString(3),
+                    cursor.getInt(4),
+                    cursor.getString(5),
+                    cursor.getFloat(6),
+                    cursor.getFloat(7),
+                    cursor.getString(8)
+            );
+        }
+
+        return evento;
+    }
+
 }

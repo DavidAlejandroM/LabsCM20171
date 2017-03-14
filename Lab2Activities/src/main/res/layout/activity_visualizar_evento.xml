@@ -18,6 +18,7 @@
             android:layout_weight="0.5">
 
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -35,8 +36,8 @@
                     android:id="@+id/et_nombre_vis_evento"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
                     android:ems="10"
+                    android:enabled="false"
                     android:hint="@string/nombre_evento"
                     android:inputType="textPersonName" />
 
@@ -44,8 +45,8 @@
                     android:id="@+id/et_responsable_vis_evento"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
                     android:ems="10"
+                    android:enabled="false"
                     android:hint="@string/responsable_evento"
                     android:inputType="textPersonName" />
 
@@ -53,8 +54,8 @@
                     android:id="@+id/et_informacion_vis_evento"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
                     android:ems="10"
+                    android:enabled="false"
                     android:hint="@string/informacion_evento"
                     android:inputType="textPersonName" />
 
@@ -62,8 +63,8 @@
                     android:id="@+id/et_fecha_vis_evento"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
                     android:ems="10"
+                    android:enabled="false"
                     android:hint="@string/fecha_evento"
                     android:inputType="date" />
 
@@ -77,6 +78,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:ems="10"
+                        android:enabled="false"
                         android:hint="@string/latitud_evento"
                         android:inputType="number|numberSigned|numberDecimal" />
 
@@ -86,6 +88,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:ems="10"
+                        android:enabled="false"
                         android:hint="@string/longitud_evento"
                         android:inputType="number|numberSigned|numberDecimal" />
                 </LinearLayout>
@@ -93,13 +96,15 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:enabled="true"
                     android:text="@string/puntuacion_evento" />
 
                 <RatingBar
                     android:id="@+id/rb_puntuacion_vis_evento"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
+                    android:focusable="false"
+                    android:isIndicator="true"
                     android:numStars="@integer/limite_rating"
                     android:stepSize="1" />
             </LinearLayout>
@@ -133,8 +138,8 @@
                         android:id="@+id/btn_googlemaps"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:onClick="clickSeleccionarImagen"
-                        android:text="@string/foto_evento" />
+                        android:onClick="clickGoogleMaps"
+                        android:text="@string/google_maps" />
 
 
                 </LinearLayout>
