@@ -41,7 +41,7 @@ public class Registrarse extends AppCompatActivity {
     {
         if(validarCampos())
         {
-            boolean a = manager.insertarUsuario(usuario,contrasena1,correo,20,"foto.jpg");
+            boolean a = manager.insertarUsuario(usuario,contrasena1,correo,20,"foto.jpg",0);
             if (a)
             {
                 Toast.makeText(getBaseContext(),"Registro Exitoso!!!",Toast.LENGTH_LONG).show();
