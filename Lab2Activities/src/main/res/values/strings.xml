@@ -3,6 +3,34 @@
     <string name="login">Inicio de Sesion</string>
     <string name="nombre_usuario">Nombre de Usuario</string>
     <string name="contraseña">Contraseña</string>
-    <string name="registrarse">Resgistrarse</string>
+    <string name="registrarse">Registrarse</string>
     <string name="iniciar">Iniciar</string>
+    <string name="registro">Registrarse</string>
+
+    <string name="usuario">Nombre de Usuario</string>
+    <string name="r_contraseña">Contraseña</string>
+    <string name="r_contraseña2">Confirmar Contraseña</string>
+    <string name="correo">Correo</string>
+    <string name="aceptar">Aceptar</string>
+    <string name="title_activity_navigation">navigation</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+
+
+    <string name="info">Laboratorio # 2 para Computación Móvil</string>
+    <string name="realizadopor">Realizado por:</string>
+    <string name="johana">Johana Caro</string>
+    <string name="alejandro">Alejandro Marin</string>
+    <string name="docente">Docente:</string>
+    <string name="sebastian">Sebastian Guzmaz</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="falta_dato">Falta un dato!!!</string>
+
+
 </resources>
