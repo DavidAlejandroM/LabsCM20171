@@ -22,7 +22,7 @@ public class Evento implements Serializable {
     * */
 
     private String nombre;
-    private String foto;
+    private byte[] foto;
     private String responsable;
     private int puntuacion;
     private String fecha;
@@ -30,7 +30,7 @@ public class Evento implements Serializable {
     private float longitud;
     private String informacion;
 
-    public Evento(String nombre, String foto, String responsable, int puntuacion, String fecha, float latitud, float longitud, String informacion) {
+    public Evento(String nombre, byte[] foto, String responsable, int puntuacion, String fecha, float latitud, float longitud, String informacion) {
         this.nombre = nombre;
         this.foto = foto;
         this.responsable = responsable;
@@ -49,11 +49,11 @@ public class Evento implements Serializable {
         this.nombre = nombre;
     }
 
-    public String getFoto() {
+    public byte[] getFoto() {
         return foto;
     }
 
-    public void setFoto(String foto) {
+    public void setFoto(byte[] foto) {
         this.foto = foto;
     }
 
