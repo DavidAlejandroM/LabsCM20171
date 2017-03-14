@@ -105,6 +105,29 @@ public class DataBaseManager {
                 null);
     }
 
-    
+    public boolean updateEstadoUsuario(String usuario,int estado)
+    {
+        // New value for one column
+        ContentValues values = new ContentValues();
+        values.put(DbContract.DbEntry.CN_US_ESTADO, estado);
+
+        // Which row to update, based on the title
+        String selection = DbContract.DbEntry.CN_US_USER + " LIKE ?";
+        String[] selectionArgs = { usuario };
+
+        int count = db.update(
+                DbContract.DbEntry.TN_USUARIOS,
+                values,
+                selection,
+                selectionArgs);
+        if (count == 0)
+        {
+            return false;
+        }
+        else
+        {
+            return true;
+        }
+    }
 
 }
