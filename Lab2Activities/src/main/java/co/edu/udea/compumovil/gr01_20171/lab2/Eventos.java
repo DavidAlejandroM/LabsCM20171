@@ -7,8 +7,10 @@ import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -52,12 +54,28 @@ public class Eventos extends Fragment {
 
     @Override
     public void onResume() {
-        ArrayList<Evento> eventos = manager.obtenerTodosEventos();
+        final ArrayList<Evento> eventos = manager.obtenerTodosEventos();
         recyclerView = (RecyclerView) getActivity().findViewById(R.id.rv_lista_eventos);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.setAdapter(new EventoAdapter(eventos));
 
+        recyclerView.addOnItemTouchListener(
+                new RecyclerItemClickListener(getContext(), recyclerView ,new RecyclerItemClickListener.OnItemClickListener() {
+                    @Override public void onItemClick(View view, int position) {
+                        // do whatever
+                        Evento e = eventos.get(position);
+                        Intent intent = new Intent(getActivity().getBaseContext(),VisualizarEvento.class);
+                        intent.putExtra("evento",e);
+                        startActivity(intent);
+
+                    }
+
+                    @Override public void onLongItemClick(View view, int position) {
+                        // do whatever
+                    }
+                })
+        );
 
         super.onResume();
     }
