@@ -5,6 +5,8 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
+import co.edu.udea.compumovil.gr01_20171.lab2.Modelo.Usuario;
+
 /**
  * Created by alejandro on 13/03/17.
  */
@@ -128,6 +130,60 @@ public class DataBaseManager {
         {
             return true;
         }
+    }
+    public Cursor inicioSesionCursor(String usuario, String contraseña)
+    {
+        Cursor cursor = null;
+
+        String query = "SELECT * FROM " + DbContract.DbEntry.TN_USUARIOS + " WHERE " +
+                DbContract.DbEntry.CN_US_USER + " = "+usuario +" AND " + DbContract.DbEntry.CN_US_PASSWORD +
+                " = "+contraseña;
+        cursor = db.rawQuery(query,null);
+
+        return cursor;
+    }
+
+    public Usuario inicioSesionUsuario(String usuario, String contraseña)
+    {
+        Usuario u = null;
+        Cursor cursor = inicioSesionCursor(usuario,contraseña);
+
+        if(cursor.getCount() == 1)
+        {
+            cursor.moveToFirst();
+            u = new Usuario(
+                    cursor.getString(1),
+                    cursor.getString(2),
+                    cursor.getString(3),
+                    cursor.getInt(4),
+                    cursor.getString(5),
+                    cursor.getInt(6)
+            );
+        }
+
+        return u;
+    }
+
+    public Usuario inicioSesionUsuarioAutomatico()
+    {
+        Usuario u = null;
+        String query = "SELECT * FROM " + DbContract.DbEntry.TN_USUARIOS + " WHERE " + DbContract.DbEntry.CN_US_ESTADO + " = 1";
+        Cursor cursor = db.rawQuery(query,null);
+
+        if(cursor.getCount() == 1)
+        {
+            cursor.moveToFirst();
+            u = new Usuario(
+                    cursor.getString(1),
+                    cursor.getString(2),
+                    cursor.getString(3),
+                    cursor.getInt(4),
+                    cursor.getString(5),
+                    cursor.getInt(6)
+            );
+        }
+
+        return u;
     }
 
 }

@@ -8,6 +8,7 @@ import android.database.Cursor;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 
@@ -22,6 +23,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import co.edu.udea.compumovil.gr01_20171.lab2.Modelo.Usuario;
 import co.edu.udea.compumovil.gr01_20171.lab2.db.DataBaseManager;
 
 
@@ -35,6 +37,9 @@ public class Login extends Activity  {
     Button registro,iniciar;
     EditText user, pass;
     private DataBaseManager manager;
+    private String usuario;
+    private String contrasena;
+    private Usuario u;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -48,7 +53,7 @@ public class Login extends Activity  {
 
         c = manager.selectTodosUsuarios();
 
-        Toast.makeText(this.getBaseContext(),String.valueOf(c.getCount()),Toast.LENGTH_LONG).show();
+        //Toast.makeText(this.getBaseContext(),String.valueOf(c.getCount()),Toast.LENGTH_LONG).show();
 
     }
 
@@ -99,6 +104,7 @@ public class Login extends Activity  {
     public void goToNavigation()
     {
         Intent intent = new Intent(Login.this,Main.class);
+        intent.putExtra("usuario", u);
         startActivity(intent);
         this.finish();
 
@@ -106,7 +112,42 @@ public class Login extends Activity  {
 
     public void ClickInicioSesion(View view)
     {
-        goToNavigation();
+        if (validarDatos()) {
+
+            u = manager.inicioSesionUsuario(usuario, contrasena);
+
+            if(u != null)
+            {
+                manager.updateEstadoUsuario(usuario,1);
+                goToNavigation();
+            }
+            else
+            {
+                Toast.makeText(getBaseContext(),"Usuario y/o Contraseña erroneo",Toast.LENGTH_SHORT);
+            }
+
+        }
+        else
+        {
+            Toast.makeText(getBaseContext(),"Usuario y/o Contraseña erroneo",Toast.LENGTH_SHORT);
+        }
+
+    }
+
+    private boolean validarDatos() {
+        user = (EditText) findViewById(R.id.et_login_usuario);
+        pass = (EditText) findViewById(R.id.et_login_contraseña);
+
+        usuario = user.getText().toString();
+        contrasena = pass.getText().toString();
+        if(!usuario.isEmpty() && !contrasena.isEmpty())
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 
     public void goToRegistro()

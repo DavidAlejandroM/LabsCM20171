@@ -16,6 +16,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import co.edu.udea.compumovil.gr01_20171.lab2.Modelo.Usuario;
 import co.edu.udea.compumovil.gr01_20171.lab2.db.DataBaseManager;
 //import co.edu.udea.compumovil.gr01_20171.lab2.listener.OnFragmentInteractionListener;
 
@@ -23,11 +24,16 @@ public class Main extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     private DataBaseManager manager;
+    private Usuario usuario;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Intent intent = getIntent();
+        usuario = (Usuario) intent.getSerializableExtra("usuario");
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -110,6 +116,7 @@ public class Main extends AppCompatActivity
             fragmentTransaction = true;
 
         } else if (id == R.id.nav_cerrar) {
+            manager.updateEstadoUsuario(usuario.getUsuario(),0);
             Intent intent = new Intent(this,Login.class);
             startActivity(intent);
 
