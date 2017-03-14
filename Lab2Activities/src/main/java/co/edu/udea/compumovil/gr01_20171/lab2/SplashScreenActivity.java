@@ -9,6 +9,8 @@ import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.Window;
 
+import co.edu.udea.compumovil.gr01_20171.lab2.db.DbHelper;
+
 /**
  * Created by alejandro on 10/03/17.
  */
@@ -21,6 +23,7 @@ public class SplashScreenActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         // Set portrait orientation
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
@@ -35,7 +38,7 @@ public class SplashScreenActivity extends Activity {
 
                 // inciamos la nueva actividad
                 Intent mainIntent = new Intent().setClass(
-                        SplashScreenActivity.this, LoginActivity.class);
+                        SplashScreenActivity.this, Login.class);
                 startActivity(mainIntent);
 
                 //finalizamos la actividad del splash screen
