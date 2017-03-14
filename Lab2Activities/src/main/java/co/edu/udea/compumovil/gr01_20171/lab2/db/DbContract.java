@@ -18,6 +18,7 @@ public final class DbContract {
         public static final String CN_US_EMAIL = "u_email";
         public static final String CN_US_EDAD = "u_edad";
         public static final String CN_US_FOTO = "u_foto";
+        public static final String CN_US_ESTADO = "u_estado";
 
 
         public static final String TN_EVENTOS = "tbl_eventos";

@@ -4,6 +4,8 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.os.Environment;
+
 import co.edu.udea.compumovil.gr01_20171.lab2.db.DbContract;
 
 
@@ -16,8 +18,10 @@ public class DbHelper extends SQLiteOpenHelper {
     public static final int DATABASE_VERSION = 1;
     public static final String DATABASE_NAME = "lab2.db";
     private SQLiteDatabase db;
+    private String DB_PATH = Environment.DIRECTORY_DOCUMENTS;
 
-    public DbHelper(Context context) {
+    public DbHelper(Context context)
+    {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
