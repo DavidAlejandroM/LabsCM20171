@@ -7,61 +7,66 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="9"></LinearLayout>
-    <RelativeLayout
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:layout_weight="1">
+        android:layout_weight="1"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
 
         <TextView
+            android:id="@+id/datos"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/info"
-            android:id="@+id/datos"
             android:textSize="20dp"
-            android:textStyle="italic"/>
+            android:textStyle="italic" />
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/realizadopor"
             android:id="@+id/realizado"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/datos"
+            android:text="@string/realizadopor"
             android:textSize="23dp"
-            android:textStyle="bold|italic"
-            android:layout_below="@+id/datos"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/johana"
-            android:id="@+id/textView3"
-            android:elegantTextHeight="false"
-            android:textSize="20dp"
-            android:layout_below="@id/realizado"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/alejandro"
-            android:id="@+id/textView4"
-            android:textSize="20dp"
-            android:layout_below="@id/textView3"/>
+            android:textStyle="bold|italic" />
 
         <TextView
+            android:id="@+id/textView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/docente"
-            android:id="@+id/docente"
-            android:textSize="23dp"
-            android:textStyle="bold|italic"
-            android:layout_below="@+id/textView4"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/sebastian"
-            android:id="@+id/profesor"
+            android:layout_below="@id/realizado"
             android:elegantTextHeight="false"
-            android:textSize="20dp"
-            android:layout_below="@id/docente"/>
-    </RelativeLayout>
+            android:text="@string/johana"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textView3"
+            android:text="@string/alejandro"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/docente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView4"
+            android:text="@string/docente"
+            android:textSize="23dp"
+            android:textStyle="bold|italic" />
+
+        <TextView
+            android:id="@+id/profesor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/docente"
+            android:elegantTextHeight="false"
+            android:text="@string/sebastian"
+            android:textSize="20dp" />
+    </LinearLayout>
 
 
 </LinearLayout>
