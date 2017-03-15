@@ -30,26 +30,31 @@ public class DbHelper extends SQLiteOpenHelper {
 
         this.db = db;
 
-        db.execSQL("CREATE TABLE " + DbContract.DbEntry.TN_USUARIOS + " ("
+        String tablaUsuarios = "CREATE TABLE " + DbContract.DbEntry.TN_USUARIOS + " ("
                 + DbContract.DbEntry._ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
                 + DbContract.DbEntry.CN_US_USER + " TEXT NOT NULL,"
                 + DbContract.DbEntry.CN_US_PASSWORD + " TEXT NOT NULL,"
                 + DbContract.DbEntry.CN_US_EMAIL + " TEXT NOT NULL,"
                 + DbContract.DbEntry.CN_US_EDAD + " INTEGER NOT NULL,"
-                + DbContract.DbEntry.CN_US_FOTO + " TEXT NOT NULL"
-                + ");");
+                + DbContract.DbEntry.CN_US_FOTO + " TEXT NOT NULL,"
+                + DbContract.DbEntry.CN_US_ESTADO + " INTEGER NOT NULL"
+                + ");";
 
-        db.execSQL("CREATE TABLE " + DbContract.DbEntry.TN_EVENTOS + " ("
+        String tablaEventos = "CREATE TABLE " + DbContract.DbEntry.TN_EVENTOS + " ("
                 + DbContract.DbEntry._ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
                 + DbContract.DbEntry.CN_EV_NOMBRE + " TEXT NOT NULL,"
-                + DbContract.DbEntry.CN_EV_FOTO + " TEXT NOT NULL,"
+                + DbContract.DbEntry.CN_EV_FOTO + " BLOB,"
                 + DbContract.DbEntry.CN_EV_RESPOSABLE + " TEXT NOT NULL,"
                 + DbContract.DbEntry.CN_EV_PUNTUACION + " INTEGER NOT NULL,"
                 + DbContract.DbEntry.CN_EV_FECHA + " INTEGER NOT NULL,"
                 + DbContract.DbEntry.CN_EV_LATITUD + " FLOAT NOT NULL,"
                 + DbContract.DbEntry.CN_EV_LONGITUD + " FLOAT NOT NULL,"
                 + DbContract.DbEntry.CN_EV_INFORMACION + " TEXT NOT NULL"
-                + ")");
+                + ")";
+
+        db.execSQL(tablaUsuarios);
+
+        db.execSQL(tablaEventos);
 
     }
 

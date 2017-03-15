@@ -32,5 +32,16 @@
 
     <string name="falta_dato">Falta un dato!!!</string>
 
+    <string name="nombre_evento">Nombre</string>
+    <string name="foto_evento">Foto</string>
+    <string name="responsable_evento">Responsable</string>
+    <string name="puntuacion_evento">Puntuacion</string>
+    <string name="fecha_evento">Fecha</string>
+    <string name="latitud_evento">Latitud</string>
+    <string name="longitud_evento">Longitud</string>
+    <string name="informacion_evento">Informacion</string>
+    <string name="title_activity_add_evento">Agregar un Evento</string>
+
+    <string name="google_maps">Google Maps</string>
 
 </resources>

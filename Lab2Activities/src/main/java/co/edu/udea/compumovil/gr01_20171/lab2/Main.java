@@ -16,6 +16,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import co.edu.udea.compumovil.gr01_20171.lab2.Modelo.Usuario;
 import co.edu.udea.compumovil.gr01_20171.lab2.db.DataBaseManager;
 //import co.edu.udea.compumovil.gr01_20171.lab2.listener.OnFragmentInteractionListener;
 
@@ -23,22 +24,18 @@ public class Main extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     private DataBaseManager manager;
+    private Usuario usuario;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Intent intent = getIntent();
+        usuario = (Usuario) intent.getSerializableExtra("usuario");
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -110,6 +107,7 @@ public class Main extends AppCompatActivity
             fragmentTransaction = true;
 
         } else if (id == R.id.nav_cerrar) {
+            manager.updateEstadoUsuario(usuario.getUsuario(),0);
             Intent intent = new Intent(this,Login.class);
             startActivity(intent);
 
