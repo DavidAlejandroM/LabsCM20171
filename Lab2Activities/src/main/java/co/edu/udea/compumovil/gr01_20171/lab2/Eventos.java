@@ -7,9 +7,12 @@ import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 import co.edu.udea.compumovil.gr01_20171.lab2.Modelo.Evento;
@@ -52,12 +55,37 @@ public class Eventos extends Fragment {
 
     @Override
     public void onResume() {
-        ArrayList<Evento> eventos = manager.obtenerTodosEventos();
+        final ArrayList<Evento> eventos = manager.obtenerTodosEventos();
         recyclerView = (RecyclerView) getActivity().findViewById(R.id.rv_lista_eventos);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.setAdapter(new EventoAdapter(eventos));
 
+        recyclerView.addOnItemTouchListener(
+                new RecyclerItemClickListener(getContext(), recyclerView ,new RecyclerItemClickListener.OnItemClickListener() {
+                    @Override public void onItemClick(View view, int position) {
+                        // do whatever
+                        Evento e = eventos.get(position);
+                        Intent intent = new Intent(getActivity().getBaseContext(),VisualizarEvento.class);
+                        //intent.putExtra("eventooo",e);
+                        intent.putExtra("nombre",e.getNombre());
+                        intent.putExtra("informacion",e.getInformacion());
+                        intent.putExtra("responsable",e.getResponsable());
+                        intent.putExtra("fecha",e.getFecha());
+                        intent.putExtra("puntuacion",e.getPuntuacion());
+                        intent.putExtra("latitud",e.getLatitud());
+                        intent.putExtra("longitud",e.getLongitud());
+                        //intent.putExtra("foto",(byte[]) e.getFoto());
+                        /*intent.putExtra("foto",e.getFoto());*/
+                        startActivity(intent);
+
+                    }
+
+                    @Override public void onLongItemClick(View view, int position) {
+                        // do whatever
+                    }
+                })
+        );
 
         super.onResume();
     }

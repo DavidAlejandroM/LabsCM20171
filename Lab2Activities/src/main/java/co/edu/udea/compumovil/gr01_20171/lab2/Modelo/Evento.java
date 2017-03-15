@@ -1,12 +1,15 @@
 package co.edu.udea.compumovil.gr01_20171.lab2.Modelo;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import java.io.Serializable;
 
 /**
  * Created by Alejandro on 13/03/2017.
  */
 
-public class Evento implements Serializable {
+public class Evento implements Parcelable {
 
     /*
     *
@@ -40,6 +43,29 @@ public class Evento implements Serializable {
         this.longitud = longitud;
         this.informacion = informacion;
     }
+
+    protected Evento(Parcel in) {
+        nombre = in.readString();
+        foto = in.createByteArray();
+        responsable = in.readString();
+        puntuacion = in.readInt();
+        fecha = in.readString();
+        latitud = in.readFloat();
+        longitud = in.readFloat();
+        informacion = in.readString();
+    }
+
+    public static final Creator<Evento> CREATOR = new Creator<Evento>() {
+        @Override
+        public Evento createFromParcel(Parcel in) {
+            return new Evento(in);
+        }
+
+        @Override
+        public Evento[] newArray(int size) {
+            return new Evento[size];
+        }
+    };
 
     public String getNombre() {
         return nombre;
@@ -103,5 +129,22 @@ public class Evento implements Serializable {
 
     public void setInformacion(String informacion) {
         this.informacion = informacion;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(nombre);
+        dest.writeByteArray(foto);
+        dest.writeString(responsable);
+        dest.writeInt(puntuacion);
+        dest.writeString(fecha);
+        dest.writeFloat(latitud);
+        dest.writeFloat(longitud);
+        dest.writeString(informacion);
     }
 }

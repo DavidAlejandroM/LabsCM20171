@@ -33,6 +33,7 @@ public class EventoAdapter extends RecyclerView.Adapter<EventoAdapter.ViewHolder
         private ImageView iv_foto;
         private RatingBar rb_puntuacion;
 
+
         public ViewHolder(View itemView)
         {
             super(itemView);
@@ -48,6 +49,7 @@ public class EventoAdapter extends RecyclerView.Adapter<EventoAdapter.ViewHolder
     public EventoAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
         View view = inflater.inflate(R.layout.item_evento, parent, false);
+
         return new ViewHolder(view);
     }
 
