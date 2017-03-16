@@ -139,8 +139,8 @@ public class DataBaseManager {
         Cursor cursor = null;
 
         String query = "SELECT * FROM " + DbContract.DbEntry.TN_USUARIOS + " WHERE " +
-                DbContract.DbEntry.CN_US_USER + " = "+usuario +" AND " + DbContract.DbEntry.CN_US_PASSWORD +
-                " = "+contraseña;
+                DbContract.DbEntry.CN_US_USER + " = '"+usuario +"' AND " + DbContract.DbEntry.CN_US_PASSWORD +
+                " = '"+contraseña+"'";
         cursor = db.rawQuery(query,null);
 
         return cursor;
