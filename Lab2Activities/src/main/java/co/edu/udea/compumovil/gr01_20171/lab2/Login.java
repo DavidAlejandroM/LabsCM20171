@@ -104,7 +104,7 @@ public class Login extends Activity  {
     public void goToNavigation()
     {
         Intent intent = new Intent(Login.this,Main.class);
-        intent.putExtra("usuario", u);
+        intent.putExtra("id", u.getId());
         startActivity(intent);
         this.finish();
 

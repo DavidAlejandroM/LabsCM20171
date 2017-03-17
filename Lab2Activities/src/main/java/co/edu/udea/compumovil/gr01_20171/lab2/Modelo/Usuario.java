@@ -12,10 +12,11 @@ public class Usuario implements Serializable{
     private String contraseña;
     private String email;
     private int edad;
-    private String foto;
+    private byte[] foto;
     private int estado;
+    private int id;
 
-    public Usuario(String usuario, String contraseña, String email, int edad, String foto, int estado) {
+    public Usuario(String usuario, String contraseña, String email, int edad, byte[] foto, int estado) {
         this.usuario = usuario;
         this.contraseña = contraseña;
         this.email = email;
@@ -56,11 +57,11 @@ public class Usuario implements Serializable{
         this.edad = edad;
     }
 
-    public String getFoto() {
+    public byte[] getFoto() {
         return foto;
     }
 
-    public void setFoto(String foto) {
+    public void setFoto(byte[] foto) {
         this.foto = foto;
     }
 
@@ -70,5 +71,13 @@ public class Usuario implements Serializable{
 
     public void setEstado(int estado) {
         this.estado = estado;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }

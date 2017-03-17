@@ -31,8 +31,12 @@ public class Main extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        manager = new DataBaseManager(this.getBaseContext());
+
         Intent intent = getIntent();
-        usuario = (Usuario) intent.getSerializableExtra("usuario");
+        int id = (int) intent.getIntExtra("id",0);
+
+        usuario = manager.obtenerUSuarioById(id);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -46,7 +50,7 @@ public class Main extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        manager = new DataBaseManager(this.getBaseContext());
+
     }
 
     @Override
@@ -100,6 +104,9 @@ public class Main extends AppCompatActivity
 
         } else if (id == R.id.nav_perfil) {
             fragment = new Perfil();
+            Bundle args = new Bundle();
+            args.putInt("id",getIntent().getIntExtra("id",0));
+            fragment.setArguments(args);
             fragmentTransaction = true;
 
         } else if (id == R.id.nav_configuraciones) {

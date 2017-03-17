@@ -43,5 +43,6 @@
     <string name="title_activity_add_evento">Agregar un Evento</string>
 
     <string name="google_maps">Google Maps</string>
+    <string name="edad">Edad</string>
 
 </resources>
