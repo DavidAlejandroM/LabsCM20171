@@ -1,6 +1,7 @@
 package co.edu.udea.compumovil.gr01_20171.lab2;
 
 import android.content.Intent;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -14,6 +15,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import co.edu.udea.compumovil.gr01_20171.lab2.Modelo.Usuario;
@@ -25,6 +28,9 @@ public class Main extends AppCompatActivity
 
     private DataBaseManager manager;
     private Usuario usuario;
+    private ImageView iv_foto_menu;
+    private TextView tv_correo;
+    private TextView tv_usuario;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,7 +56,12 @@ public class Main extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
+        View v = navigationView.getHeaderView(0);
 
+        iv_foto_menu = (ImageView) v.findViewById(R.id.iv_foto_main);
+        tv_usuario = (TextView) v.findViewById(R.id.tv_titulo_menu);
+        tv_correo = (TextView) v.findViewById(R.id.tv_correo_menu);
+        iv_foto_menu.setImageBitmap(BitmapFactory.decodeByteArray(usuario.getFoto(),0,usuario.getFoto().length));
     }
 
     @Override
