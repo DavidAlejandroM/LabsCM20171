@@ -49,7 +49,7 @@ public class SplashScreenActivity extends Activity {
                     // inciamos la nueva actividad
                     Intent mainIntent = new Intent().setClass(
                             SplashScreenActivity.this, Main.class);
-                    mainIntent.putExtra("usuario", usuario);
+                    mainIntent.putExtra("id", usuario.getId());
                     startActivity(mainIntent);
                 }
                 else
