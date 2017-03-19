@@ -4,19 +4,19 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_eventos"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/ic_timetable"
             android:title="Eventos" />
         <item
             android:id="@+id/nav_perfil"
-            android:icon="@drawable/ic_menu_gallery"
+            android:icon="@drawable/ic_account_circle"
             android:title="Perfil" />
         <item
             android:id="@+id/nav_configuraciones"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/ic_menu_manage"
             android:title="Configuraciones" />
         <item
             android:id="@+id/nav_cerrar"
-            android:icon="@drawable/ic_menu_manage"
+            android:icon="@drawable/ic_account_off"
             android:title="Cerrar Sesión" />
         <item
             android:id="@+id/nav_acerca"
