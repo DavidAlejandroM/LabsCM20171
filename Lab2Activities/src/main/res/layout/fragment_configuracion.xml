@@ -4,10 +4,69 @@
     android:layout_height="match_parent"
     tools:context="co.edu.udea.compumovil.gr01_20171.lab2.Configuracion">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="vertical">
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout4"
+            android:layout_width="80dp"
+            android:layout_height="50dp"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@+id/linearLayout2"
+            android:layout_marginEnd="31dp"
+            android:layout_marginTop="33dp"
+            android:orientation="vertical"
+            android:weightSum="1">
+
+        </LinearLayout>
+
+        <Switch
+            android:id="@+id/sw_config_sesion"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/linearLayout2"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:text="Mantener la sesión" />
+
+        <CheckBox
+            android:id="@+id/checkBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/sw_config_sesion"
+            android:layout_below="@+id/sw_config_sesion"
+            android:layout_marginTop="17dp"
+            android:text="Notificaciones" />
+
+        <CheckBox
+            android:id="@+id/checkBox2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/checkBox"
+            android:layout_below="@+id/checkBox"
+            android:layout_marginTop="20dp"
+            android:text="Sonido" />
+
+        <Button
+            android:id="@+id/btn_editar_perfil"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_alignStart="@+id/checkBox2"
+            android:layout_below="@+id/checkBox2"
+            android:layout_marginTop="20dp"
+            android:text="Editar Perfil" />
+
+
+    </RelativeLayout>
 
 </FrameLayout>

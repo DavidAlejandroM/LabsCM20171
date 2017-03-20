@@ -25,7 +25,7 @@ public class DataBaseManager {
          db = helper.getWritableDatabase();
      }
 
-     public ContentValues generarContentValuesUsuario(String usuario, String password, String email, int edad, String foto, int estado)
+     public ContentValues generarContentValuesUsuario(String usuario, String password, String email, int edad, byte[] foto, int estado)
      {
          ContentValues valores = new ContentValues();
          valores.put(DbContract.DbEntry.CN_US_USER, usuario);
@@ -55,7 +55,7 @@ public class DataBaseManager {
         return valores;
     }
 
-    public boolean insertarUsuario(String usuario, String password, String email, int edad, String foto, int estado)
+    public boolean insertarUsuario(String usuario, String password, String email, int edad, byte[] foto, int estado)
     {
         ContentValues valores = generarContentValuesUsuario(usuario, password, email, edad, foto, estado);
         long row = db.insert(DbContract.DbEntry.TN_USUARIOS,null,valores);
@@ -159,9 +159,10 @@ public class DataBaseManager {
                     cursor.getString(2),
                     cursor.getString(3),
                     cursor.getInt(4),
-                    cursor.getString(5),
+                    cursor.getBlob(5),
                     cursor.getInt(6)
             );
+            u.setId(cursor.getInt(0));
         }
 
         return u;
@@ -181,9 +182,33 @@ public class DataBaseManager {
                     cursor.getString(2),
                     cursor.getString(3),
                     cursor.getInt(4),
-                    cursor.getString(5),
+                    cursor.getBlob(5),
                     cursor.getInt(6)
             );
+            u.setId(cursor.getInt(0));
+        }
+
+        return u;
+    }
+
+    public Usuario obtenerUSuarioById(int id)
+    {
+        Usuario u = null;
+        String query = "SELECT * FROM " + DbContract.DbEntry.TN_USUARIOS + " WHERE " + DbContract.DbEntry._ID + " = "+String.valueOf(id);
+        Cursor cursor = db.rawQuery(query,null);
+
+        if(cursor.getCount() == 1)
+        {
+            cursor.moveToFirst();
+            u = new Usuario(
+                    cursor.getString(1),
+                    cursor.getString(2),
+                    cursor.getString(3),
+                    cursor.getInt(4),
+                    cursor.getBlob(5),
+                    cursor.getInt(6)
+            );
+            u.setId(cursor.getInt(0));
         }
 
         return u;
@@ -262,4 +287,21 @@ public class DataBaseManager {
         return evento;
     }
 
+    public boolean updateUsuario(String nombre, String correo, int edad, String oldNombre)
+    {
+        ContentValues values = new ContentValues();
+        values.put(DbContract.DbEntry.CN_US_USER,nombre);
+        values.put(DbContract.DbEntry.CN_US_EMAIL,correo);
+        values.put(DbContract.DbEntry.CN_US_EDAD,edad);
+
+        long row = db.update(DbContract.DbEntry.TN_USUARIOS,values,DbContract.DbEntry.CN_US_USER+" = '"+oldNombre+"'",null);
+
+        if (row != -1) {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
 }
