@@ -72,6 +72,7 @@
                 android:enabled="false"
                 android:hint="@string/correo"
                 android:inputType="textEmailAddress" />
+
         </LinearLayout>
 
         <LinearLayout
@@ -107,6 +108,16 @@
 
                 </LinearLayout>
             </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/contenedor_button_perfil"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:orientation="horizontal">
 
         </LinearLayout>
 

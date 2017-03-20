@@ -287,4 +287,21 @@ public class DataBaseManager {
         return evento;
     }
 
+    public boolean updateUsuario(String nombre, String correo, int edad, String oldNombre)
+    {
+        ContentValues values = new ContentValues();
+        values.put(DbContract.DbEntry.CN_US_USER,nombre);
+        values.put(DbContract.DbEntry.CN_US_EMAIL,correo);
+        values.put(DbContract.DbEntry.CN_US_EDAD,edad);
+
+        long row = db.update(DbContract.DbEntry.TN_USUARIOS,values,DbContract.DbEntry.CN_US_USER+" = '"+oldNombre+"'",null);
+
+        if (row != -1) {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
 }

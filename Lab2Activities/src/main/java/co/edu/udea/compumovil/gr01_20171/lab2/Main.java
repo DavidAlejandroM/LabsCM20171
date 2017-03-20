@@ -122,6 +122,10 @@ public class Main extends AppCompatActivity
 
         } else if (id == R.id.nav_configuraciones) {
             fragment = new Configuracion();
+            Bundle args = new Bundle();
+            args.putInt("id",getIntent().getIntExtra("id",0));
+            args.putInt("state", 0);
+            fragment.setArguments(args);
             fragmentTransaction = true;
 
         } else if (id == R.id.nav_cerrar) {

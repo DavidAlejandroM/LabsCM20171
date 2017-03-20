@@ -4,12 +4,6 @@
     android:layout_height="match_parent"
     tools:context="co.edu.udea.compumovil.gr01_20171.lab2.Configuracion">
 
-    <!-- TODO: Update blank fragment layout --><![CDATA[
-
-    /LinearLayout>
-
-
-    ]]>
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -37,21 +31,20 @@
         </LinearLayout>
 
         <Switch
-            android:id="@+id/switch1"
+            android:id="@+id/sw_config_sesion"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:layout_weight=""
-            android:text="Mantener la sesión"
             android:layout_below="@+id/linearLayout2"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="20dp" />
+            android:layout_marginTop="20dp"
+            android:text="Mantener la sesión" />
 
         <CheckBox
             android:id="@+id/checkBox"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignStart="@+id/switch1"
-            android:layout_below="@+id/switch1"
+            android:layout_alignStart="@+id/sw_config_sesion"
+            android:layout_below="@+id/sw_config_sesion"
             android:layout_marginTop="17dp"
             android:text="Notificaciones" />
 
@@ -65,7 +58,7 @@
             android:text="Sonido" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/btn_editar_perfil"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
             android:layout_alignStart="@+id/checkBox2"
