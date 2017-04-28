@@ -69,7 +69,7 @@ public class VisualizarEvento extends AppCompatActivity {
     {
         // Create a Uri from an intent string. Use the result to create an Intent.
         Uri gmmIntentUri = Uri.parse("geo:"+ String.valueOf(evento.getLatitud()) +
-                ","+String.valueOf(evento.getLongitud())+"?z=14");
+                ","+String.valueOf(evento.getLongitud())+"?z=18");
 
 // Create an Intent from gmmIntentUri. Set the action to ACTION_VIEW
         Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);

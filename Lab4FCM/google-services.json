@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "699899908551",
+    "firebase_url": "https://compumovil-57798.firebaseio.com",
+    "project_id": "compumovil-57798",
+    "storage_bucket": "compumovil-57798.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:699899908551:android:be3e7590b5bd2fc6",
+        "android_client_info": {
+          "package_name": "co.edu.udea.compumovil.g01_20171.lab4"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "699899908551-o59cau0dab8c4tc7jma26u9trqvanrh7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "co.edu.udea.compumovil.g01_20171.lab4",
+            "certificate_hash": "a25814b7c15112fd1c920f098808c55bfee01aea"
+          }
+        },
+        {
+          "client_id": "699899908551-5bgvun6no70rspvg2oivto8u2midl5br.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDn0SWrW0HOFJWFraQ_Pz5zCb3UyE7-XDE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "699899908551-5bgvun6no70rspvg2oivto8u2midl5br.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

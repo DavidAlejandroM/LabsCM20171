@@ -24,6 +24,7 @@ public class Eventos extends Fragment {
     FloatingActionButton fab_agregar_eventos;
     private DataBaseManager manager;
     RecyclerView recyclerView;
+    ArrayList<Evento> eventos;
 
     public Eventos() {
         // Required empty public constructor
@@ -55,7 +56,7 @@ public class Eventos extends Fragment {
 
     @Override
     public void onResume() {
-        final ArrayList<Evento> eventos = manager.obtenerTodosEventos();
+        eventos = manager.obtenerTodosEventos();
         recyclerView = (RecyclerView) getActivity().findViewById(R.id.rv_lista_eventos);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
