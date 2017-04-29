@@ -1,4 +1,4 @@
-package co.edu.udea.compumovil.g01_20171.lab4.Modelo;
+package co.edu.udea.compumovil.g01_20171.lab4;
 
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -13,8 +13,6 @@ import android.widget.Toast;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
-
-import co.edu.udea.compumovil.g01_20171.lab4.R;
 
 public class ResetPasswordActivity extends AppCompatActivity {
 

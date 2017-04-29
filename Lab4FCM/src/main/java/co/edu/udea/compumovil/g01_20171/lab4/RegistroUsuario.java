@@ -16,8 +16,6 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
-import co.edu.udea.compumovil.g01_20171.lab4.Modelo.ResetPasswordActivity;
-
 public class RegistroUsuario extends AppCompatActivity {
 
     private EditText inputEmail, inputPassword;

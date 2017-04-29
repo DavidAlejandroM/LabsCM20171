@@ -1,6 +1,8 @@
 package co.edu.udea.compumovil.g01_20171.lab4;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
@@ -14,12 +16,18 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 public class Main extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    private FirebaseAuth auth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        auth = FirebaseAuth.getInstance();
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -83,19 +91,31 @@ public class Main extends AppCompatActivity
         boolean fragmentTransaction = false;
         Fragment fragment = null;
 
-        if (id == R.id.nav_camera) {
+        if (id == R.id.nav_eventos) {
             fragment = new Evento();
             fragmentTransaction = true;
-        } else if (id == R.id.nav_gallery) {
+        } else if (id == R.id.nav_perfil) {
 
-        } else if (id == R.id.nav_slideshow) {
+        } else if (id == R.id.nav_configuraciones) {
 
-        } else if (id == R.id.nav_manage) {
+        } else if (id == R.id.nav_acerca) {
 
-        } else if (id == R.id.nav_share) {
+        } else if (id == R.id.nav_cerrar) {
+            auth.signOut();
 
-        } else if (id == R.id.nav_send) {
-
+// this listener will be called when there is change in firebase user session
+            FirebaseAuth.AuthStateListener authListener = new FirebaseAuth.AuthStateListener() {
+                @Override
+                public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+                    FirebaseUser user = firebaseAuth.getCurrentUser();
+                    if (user == null) {
+                        // user auth state is changed - user is null
+                        // launch login activity
+                        startActivity(new Intent(Main.this, InicioSesion.class));
+                        finish();
+                    }
+                }
+            };
         }
 
         if(fragmentTransaction) {
@@ -108,5 +128,20 @@ public class Main extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        if (auth.getCurrentUser() != null) {
+
+        }
+        else
+        {
+            Intent intent = new Intent(Main.this,InicioSesion.class);
+            startActivity(intent);
+            Main.this.finish();
+        }
     }
 }

@@ -17,8 +17,6 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
-import co.edu.udea.compumovil.g01_20171.lab4.Modelo.ResetPasswordActivity;
-
 
 public class InicioSesion extends AppCompatActivity{
 
@@ -41,8 +39,8 @@ public class InicioSesion extends AppCompatActivity{
 
                 setContentView(R.layout.activity_inicio);
 
-                Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-                setSupportActionBar(toolbar);
+                //Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+                //setSupportActionBar(toolbar);
 
                 inputEmail = (EditText) findViewById(R.id.email);
                 inputPassword = (EditText) findViewById(R.id.password);
@@ -75,12 +73,12 @@ public class InicioSesion extends AppCompatActivity{
                         final String password = inputPassword.getText().toString();
 
                         if (TextUtils.isEmpty(email)) {
-                            Toast.makeText(getApplicationContext(), "Enter email address!", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplicationContext(), "Entre un correo por favor!", Toast.LENGTH_SHORT).show();
                             return;
                         }
 
                         if (TextUtils.isEmpty(password)) {
-                            Toast.makeText(getApplicationContext(), "Enter password!", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplicationContext(), "Entre una contraseña por favor!", Toast.LENGTH_SHORT).show();
                             return;
                         }
 
