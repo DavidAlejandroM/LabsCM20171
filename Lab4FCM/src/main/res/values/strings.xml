@@ -38,4 +38,22 @@
     <string name="btn_sign_out">Cerrar sesion</string>
     <string name="lbl_forgot_password">Forgot password?</string>
     <string name="forgot_password_msg">We just need your registered Email Id to sent you password reset instructions.</string>
+
+    <string name="nombre_evento">Nombre</string>
+    <string name="foto_evento">Foto</string>
+    <string name="responsable_evento">Responsable</string>
+    <string name="puntuacion_evento">Puntuacion</string>
+    <string name="fecha_evento">Fecha</string>
+    <string name="latitud_evento">Latitud</string>
+    <string name="longitud_evento">Longitud</string>
+    <string name="informacion_evento">Informacion</string>
+    <string name="title_activity_add_evento">Agregar un Evento</string>
+
+    <string name="usuario">Nombre de Usuario</string>
+    <string name="r_contraseña">Contraseña</string>
+    <string name="r_contraseña2">Confirmar Contraseña</string>
+    <string name="correo">Correo</string>
+    <string name="aceptar">Aceptar</string>
+    <string name="title_activity_navigation">navigation</string>
+
 </resources>
