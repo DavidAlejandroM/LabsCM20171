@@ -47,6 +47,7 @@ public class AgregarEvento extends AppCompatActivity {
     private float longitud;
     private int rating;
     private Bitmap bitmap = null;
+    private int id;
 
     private DatabaseReference db;
     private String EVENTOS = "eventos";
@@ -58,6 +59,7 @@ public class AgregarEvento extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        id = getIntent().getIntExtra("id",0);
         setContentView(R.layout.activity_agregar_evento);
         db = FirebaseDatabase.getInstance().getReference();
         inicializarComponente();
@@ -130,11 +132,13 @@ public class AgregarEvento extends AppCompatActivity {
         {
             //boolean b = manager.insertarEvento(nombre,imageViewToByte(iv_foto),responsable,rating,fecha,
              //       latitud,longitud,informacion);
+            //id ++;
             Evento evento = new Evento(nombre,foto,responsable,rating,fecha,latitud,longitud,informacion);
-            db.child(EVENTOS).setValue(evento);
+            db.child(EVENTOS).child(String.valueOf(id)).setValue(evento);
             boolean b = true;
             if (b)
             {
+                id++;
                 Toast.makeText(getApplicationContext(),"EventosActivity Registrado Satisfactoriamente",Toast.LENGTH_LONG);
                 this.finish();
             }

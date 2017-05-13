@@ -56,4 +56,6 @@
     <string name="aceptar">Aceptar</string>
     <string name="title_activity_navigation">navigation</string>
 
+    <string name="google_maps">Google Maps</string>
+    <string name="edad">Edad</string>
 </resources>

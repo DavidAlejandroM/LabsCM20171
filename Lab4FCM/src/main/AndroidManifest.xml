@@ -28,6 +28,7 @@
             android:name=".AgregarEvento"
             android:label="@string/title_activity_add_evento" />
         <activity android:name=".RegistroUsuario"></activity>
+        <activity android:name=".VisualizarEvento"></activity>
     </application>
 
 </manifest>
