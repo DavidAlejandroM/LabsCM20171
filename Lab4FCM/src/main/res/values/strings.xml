@@ -58,4 +58,7 @@
 
     <string name="google_maps">Google Maps</string>
     <string name="edad">Edad</string>
+
+    <string name="appwidget_text">Eventos</string>
+    <string name="add_widget">Add widget</string>
 </resources>

@@ -27,8 +27,40 @@
         <activity
             android:name=".AgregarEvento"
             android:label="@string/title_activity_add_evento" />
-        <activity android:name=".RegistroUsuario"></activity>
-        <activity android:name=".VisualizarEvento"></activity>
+        <activity android:name=".RegistroUsuario" />
+        <activity android:name=".VisualizarEvento" />
+
+        <service
+            android:name=".Servicio.FCMService"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+        <service
+            android:name=".Servicio.FCMInstanceIdService"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+
+        <receiver android:name="co.edu.udea.compumovil.g01_20171.lab4.Widget.MyWidget" >
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/my_widget_info" />
+        </receiver>
+
+        <service android:name="co.edu.udea.compumovil.g01_20171.lab4.Widget.UpdateWidgetService">
+
+        </service>
+
     </application>
 
 </manifest>
